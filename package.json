@@ -1,0 +1,30 @@
+{
+  "name": "jt-icons",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint --fix src/**/*.{ts,js,vue} && stylelint --fix src/**/*.{ts,js,vue}",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.0",
+    "prettier": "latest",
+    "typescript": "^4.7.2"
+  },
+  "lint-staged": {
+    "packages/**/*.{ts,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}

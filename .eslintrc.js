@@ -1,3 +1,10 @@
+/*
+ * @Author: Mr-Nobody-li
+ * @Date: 2022-08
+ * @LastEditors: Mr-Nobody-li
+ * @LastEditTime: 2022-08
+ * @Description: eslint
+ */
 module.exports = {
   root: true,
   env: {
@@ -5,11 +12,21 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'plugin:vue/vue3-recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier'
   ],
   plugins: ['@typescript-eslint'],
-  parser: '@typescript-eslint/parser',
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    jsxPragma: 'React',
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
   rules: {
     'no-undef': 'off',
     // 数组函数需要有返回值
@@ -49,6 +66,6 @@ module.exports = {
     // 允许对this设置alias
     '@typescript-eslint/no-this-alias': 'off',
     // 允许使用any类型
-    '@typescript-eslint/no-explicit-any': ['off'],
+    '@typescript-eslint/no-explicit-any': ['off']
   }
 }

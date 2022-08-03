@@ -1,8 +1,14 @@
+/*
+ * @Author: Mr-Nobody-li
+ * @Date: 2022-08
+ * @LastEditors: Mr-Nobody-li
+ * @LastEditTime: 2022-08
+ * @Description: esbuild打包
+ */
 import path from 'path'
 import consola from 'consola'
 import chalk from 'chalk'
 import { build } from 'esbuild'
-import GlobalsPlugin from 'esbuild-plugin-globals'
 import vue from 'unplugin-vue/esbuild'
 import { emptyDir } from 'fs-extra'
 import { version } from '../package.json'
@@ -27,21 +33,11 @@ const buildBundle = async () => {
       format,
       minifySyntax: true,
       banner: {
-        js: `/*! Element Plus Icons Vue v${version} */\n`
+        js: `/*! JT Icon Vue Components v${version} */\n`
       },
       outdir: pathOutput
     }
-    if (format === 'iife') {
-      options.plugins!.push(
-        GlobalsPlugin({
-          vue: 'Vue'
-        })
-      )
-      options.globalName = 'ElementPlusIconsVue'
-    } else {
-      options.external = ['vue']
-    }
-
+    options.external = ['vue']
     return options
   }
   const doBuild = async (minify: boolean) => {
@@ -51,19 +47,6 @@ const buildBundle = async () => {
         entryNames: `[name]${minify ? '.min' : ''}`,
         minify,
         sourcemap: minify
-      }),
-      build({
-        ...getBuildOptions('iife'),
-        entryNames: `[name].iife${minify ? '.min' : ''}`,
-        minify,
-        sourcemap: minify
-      }),
-      build({
-        ...getBuildOptions('cjs'),
-        entryNames: `[name]${minify ? '.min' : ''}`,
-        outExtension: { '.js': '.cjs' },
-        minify,
-        sourcemap: minify
       })
     ])
   }
@@ -71,7 +54,7 @@ const buildBundle = async () => {
   return Promise.all([doBuild(true), doBuild(false)])
 }
 
-consola.info(chalk.blue('cleaning dist...'))
+consola.info(chalk.blue('清空 dist...'))
 await emptyDir(pathOutput)
-consola.info(chalk.blue('building...'))
+consola.info(chalk.blue('打包...'))
 await buildBundle()

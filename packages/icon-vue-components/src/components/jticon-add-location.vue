@@ -17,6 +17,6 @@
 <script lang="ts">
 import type { DefineComponent } from 'vue'
 export default {
-  name: 'jticon-add-location',
+  name: 'Jticon-add-location',
 } as DefineComponent
 </script>

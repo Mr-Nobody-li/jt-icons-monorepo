@@ -1,2 +1,2 @@
-export { default as jticonAddLocation } from './jticon-add-location.vue'
-export { default as jticonAim } from './jticon-aim.vue'
+export { default as JticonAddLocation } from './Jticon-add-location.vue'
+export { default as JticonAim } from './Jticon-aim.vue'

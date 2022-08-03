@@ -6,7 +6,13 @@
  * @Description:playground-图标预览 main
  */
 import { createApp } from 'vue'
-import ElIcons from '@jt-icons/icon-vue-components/global'
+import JtIcons, { icons } from '@jt-icons/icon-vue-components/global'
+// import { default as a } from '@jt-icons/icon-vue-components/global'
+// import { icons } from '@jt-icons/icon-vue-components/global'
+console.log(`🚀 => file: main.ts => line 12 => icons`, icons)
+
+// console.log(a, jticonAddLocation)
+
 import App from './App.vue'
 
-createApp(App).use(ElIcons).mount('#app')
+createApp(App).use(JtIcons).mount('#app')

@@ -7,6 +7,7 @@
 -->
 <template>
   <div>
+    <h1>svg图标列表</h1>
     <component
       :is="Icon"
       v-for="(Icon, key) in icons"
@@ -14,8 +15,9 @@
       class="icon"
     />
     <hr />
+    <h1>全局注册的svg图标</h1>
     <component
-      :is="`ElIcon${key}`"
+      :is="key"
       v-for="key in Object.keys(icons)"
       :key="key"
       class="icon"

@@ -16,7 +16,7 @@ import { pathComponents } from './paths'
 import type { BuiltInParserName } from 'prettier'
 import icons from '../svg'
 
-const prefix = 'jticon'
+const prefix = 'Jticon'
 
 const formatCode = (
   code: string,
@@ -38,10 +38,10 @@ const transformToVueComponent = async (
         ${iconContent}
       </template>
       <script lang="ts">
-      import type { DefineComponent } from 'vue'
-      export default ({
-        name: "${prefix}-${iconName}",
-      }) as DefineComponent
+        import type { DefineComponent } from 'vue'
+        export default ({
+          name: "${prefix}-${iconName}",
+        }) as DefineComponent
       </script>
     `,
     'vue'

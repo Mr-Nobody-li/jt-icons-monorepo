@@ -1,6 +1,6 @@
 {
   "name": "@jt-icons/icon-vue-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue components of JT Icons collection.",
   "type": "module",
   "keywords": [
@@ -10,6 +10,14 @@
   "files": [
     "dist"
   ],
+  "bugs": {
+    "url": "https://github.com/Mr-Nobody-li/jt-icons-monorepo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mr-Nobody-li/jt-icons-monorepo",
+    "directory": "packages/icon-vue-components"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "index.d.ts",
@@ -31,8 +39,6 @@
       ]
     }
   },
-  "unpkg": "dist/index.iife.min.js",
-  "jsdelivr": "dist/index.iife.min.js",
   "sideEffects": false,
   "scripts": {
     "build": "pnpm run build:generate && run-p build:build build:types",

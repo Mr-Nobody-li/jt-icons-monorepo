@@ -16,7 +16,7 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.0",
     "prettier": "latest",
-    "typescript": "^4.7.2"
+    "typescript": "^4.7.4"
   },
   "lint-staged": {
     "packages/**/*.{ts,js}": [

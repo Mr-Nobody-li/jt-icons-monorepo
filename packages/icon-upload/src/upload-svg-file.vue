@@ -12,7 +12,7 @@
       v-model:file-list="fileList"
       accept=".svg"
       class="upload"
-      action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
+      action="api/upload"
       multiple
       :on-success="handleSuccess"
     >
@@ -33,16 +33,7 @@ import { ref } from 'vue'
 import type { UploadUserFile } from 'element-plus'
 import { ElMessage } from 'element-plus'
 
-const fileList = ref<UploadUserFile[]>([
-  {
-    name: 'element-plus-logo.svg',
-    url: 'https://element-plus.org/images/element-plus-logo.svg'
-  },
-  {
-    name: 'element-plus-logo2.svg',
-    url: 'https://element-plus.org/images/element-plus-logo.svg'
-  }
-])
+const fileList = ref<UploadUserFile[]>([])
 
 const handleSuccess = (response) => {
   console.log(

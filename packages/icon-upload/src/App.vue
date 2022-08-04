@@ -5,10 +5,12 @@
  * @LastEditTime: 2022-08
  * @Description: app.vue
 -->
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import uploadSvgFile from './upload-svg-file.vue'
+</script>
 
 <template>
-  <div>1</div>
+  <upload-svg-file />
 </template>
 
 <style lang="scss" scoped></style>

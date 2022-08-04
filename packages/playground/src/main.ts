@@ -6,13 +6,7 @@
  * @Description:playground-图标预览 main
  */
 import { createApp } from 'vue'
-import JtIcons, { icons } from '@jt-icons/icon-vue-components/global'
-// import { default as a } from '@jt-icons/icon-vue-components/global'
-// import { icons } from '@jt-icons/icon-vue-components/global'
-console.log(`🚀 => file: main.ts => line 12 => icons`, icons)
-
-// console.log(a, jticonAddLocation)
-
+import JtIcons from '@jt-icons/icon-vue-components/global'
 import App from './App.vue'
 
 createApp(App).use(JtIcons).mount('#app')

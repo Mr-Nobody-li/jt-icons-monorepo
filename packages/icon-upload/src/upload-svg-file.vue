@@ -6,30 +6,32 @@
  * @Description: 上传svg文件
 -->
 <template>
-  <el-upload
-    v-model:file-list="fileList"
-    class="upload-demo"
-    action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
-    multiple
-    :on-preview="handlePreview"
-    :on-remove="handleRemove"
-    :before-remove="beforeRemove"
-    :limit="3"
-    :on-exceed="handleExceed"
-  >
-    <el-button type="primary">Click to upload</el-button>
-    <template #tip>
-      <div class="el-upload__tip">
-        jpg/png files with a size less than 500KB.
-      </div>
-    </template>
-  </el-upload>
+  <div class="upload-svg-file">
+    <h3>上传svg图标</h3>
+    <el-upload
+      v-model:file-list="fileList"
+      accept=".svg"
+      class="upload"
+      action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
+      multiple
+      :on-success="handleSuccess"
+    >
+      <el-button type="primary">本地上传</el-button>
+      <template #tip>
+        <div class="el-upload__tip">
+          仅支持上传.svg格式文件,大小限制500kb
+        </div>
+      </template>
+    </el-upload>
+    <hr />
+    <h3>svg图标预览</h3>
+  </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElMessage, ElMessageBox } from 'element-plus'
-import type { UploadProps, UploadUserFile } from 'element-plus'
+import type { UploadUserFile } from 'element-plus'
+import { ElMessage } from 'element-plus'
 
 const fileList = ref<UploadUserFile[]>([
   {
@@ -42,40 +44,17 @@ const fileList = ref<UploadUserFile[]>([
   }
 ])
 
-const handleRemove: UploadProps['onRemove'] = (file, uploadFiles) => {
-  console.log(file, uploadFiles)
-}
-
-const handlePreview: UploadProps['onPreview'] = (uploadFile) => {
-  console.log(uploadFile)
-}
-
-const handleExceed: UploadProps['onExceed'] = (
-  files,
-  uploadFiles
-) => {
-  ElMessage.warning(
-    `The limit is 3, you selected ${
-      files.length
-    } files this time, add up to ${
-      files.length + uploadFiles.length
-    } totally`
-  )
-}
-
-const beforeRemove: UploadProps['beforeRemove'] = (
-  uploadFile,
-  uploadFiles
-) => {
+const handleSuccess = (response) => {
   console.log(
-    `🚀 => file: upload-svg-file.vue => line 70 => uploadFiles`,
-    uploadFiles
+    `🚀 => file: upload-svg-file.vue => line 47 => response`,
+    response
   )
-  return ElMessageBox.confirm(
-    `Cancel the transfert of ${uploadFile.name} ?`
-  ).then(
-    () => true,
-    () => false
-  )
+  ElMessage.success('上传成功')
 }
 </script>
+
+<style lang="css" scoped>
+.upload-svg-file {
+  margin: 30px 300px;
+}
+</style>

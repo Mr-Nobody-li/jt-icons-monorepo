@@ -36,11 +36,7 @@ import { ElMessage } from 'element-plus'
 
 const fileList = ref<UploadUserFile[]>([])
 
-const handleSuccess = (response) => {
-  console.log(
-    `🚀 => file: upload-svg-file.vue => line 47 => response`,
-    response
-  )
+const handleSuccess = () => {
   ElMessage.success('上传成功')
 }
 

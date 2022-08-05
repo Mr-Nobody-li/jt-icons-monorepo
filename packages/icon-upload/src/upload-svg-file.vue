@@ -15,11 +15,12 @@
       action="api/upload"
       multiple
       :on-success="handleSuccess"
+      :before-upload="beforeUpload"
     >
       <el-button type="primary">本地上传</el-button>
       <template #tip>
         <div class="el-upload__tip">
-          仅支持上传.svg格式文件,大小限制500kb
+          仅支持上传.svg格式文件,大小限制500kb,文件名只允许包含小写字母和'-'
         </div>
       </template>
     </el-upload>
@@ -41,6 +42,14 @@ const handleSuccess = (response) => {
     response
   )
   ElMessage.success('上传成功')
+}
+
+// 文件名校验 禁止输入除小写字母、'-'以外的字符
+const beforeUpload = (rawFile) => {
+  const pattern = /[^a-z-(.svg)]+/
+  const fileNameIllegal = pattern.test(rawFile.name)
+  fileNameIllegal && ElMessage.info('文件名只允许包含小写字母和"-"')
+  return !fileNameIllegal
 }
 </script>
 

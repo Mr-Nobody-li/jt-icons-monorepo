@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url'
 import router from './router/upload.js'
 
 const app = new Koa()
-const port = 3001
+const port = 3000
 const dir = dirname(fileURLToPath(import.meta.url))
 
 const koaBodyOptions = {
@@ -29,3 +29,5 @@ app
   .use(router.routes())
   .use(router.allowedMethods())
   .listen(port)
+
+console.log(`服务启动，端口${port}`)

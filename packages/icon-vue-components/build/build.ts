@@ -6,8 +6,6 @@
  * @Description: esbuild打包
  */
 import path from 'path'
-import consola from 'consola'
-import chalk from 'chalk'
 import { build } from 'esbuild'
 import vue from 'unplugin-vue/esbuild'
 import { emptyDir } from 'fs-extra'
@@ -54,7 +52,7 @@ const buildBundle = async () => {
   return Promise.all([doBuild(true), doBuild(false)])
 }
 
-consola.info(chalk.blue('清空 dist...'))
+console.log('清空 dist...')
 await emptyDir(pathOutput)
-consola.info(chalk.blue('打包...'))
+console.log('打包...')
 await buildBundle()

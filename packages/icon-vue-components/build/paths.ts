@@ -9,8 +9,10 @@ import { dirname, resolve } from 'path'
 import { fileURLToPath } from 'url'
 
 const dir = dirname(fileURLToPath(import.meta.url))
+const pathRoot = resolve(dir, '..')
+const pathSrc = resolve(pathRoot, 'src')
+const pathComponents = resolve(pathSrc, 'components')
+const pathOutput = resolve(pathRoot, 'dist')
+const pathSvgFiles = resolve(pathRoot, '..', 'icon-server/static/svg')
 
-export const pathRoot = resolve(dir, '..')
-export const pathSrc = resolve(pathRoot, 'src')
-export const pathComponents = resolve(pathSrc, 'components')
-export const pathOutput = resolve(pathRoot, 'dist')
+export { pathRoot, pathSrc, pathComponents, pathOutput, pathSvgFiles }

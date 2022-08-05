@@ -6,17 +6,18 @@
  * @Description: 生成icon-vue-components
  */
 import path from 'path'
-import { writeFile } from 'fs/promises'
+import { writeFile, readFile } from 'fs/promises'
 import { emptyDir } from 'fs-extra'
-import consola from 'consola'
 import camelcase from 'camelcase'
 import { format } from 'prettier'
-import chalk from 'chalk'
-import { pathComponents } from './paths'
 import type { BuiltInParserName } from 'prettier'
-import icons from '../svg'
+import glob from 'fast-glob'
+import { pathComponents, pathSvgFiles } from './paths'
 
 const prefix = 'Jticon'
+
+const getSvgFiles = () =>
+  glob('*.svg', { cwd: pathSvgFiles, absolute: true })
 
 const formatCode = (
   code: string,
@@ -28,47 +29,49 @@ const formatCode = (
     singleQuote: true
   })
 
-const transformToVueComponent = async (
-  iconName: string,
-  iconContent: string
-) => {
+const getName = (filePath: string) =>
+  path.basename(filePath).replace('.svg', '')
+
+const transformToVueComponent = async (filePath: string) => {
+  const content = await readFile(filePath, 'utf-8')
+  const filename = getName(filePath)
   const vue = formatCode(
     `
       <template>
-        ${iconContent}
+        ${content}
       </template>
       <script lang="ts">
         import type { DefineComponent } from 'vue'
         export default ({
-          name: "${prefix}-${iconName}",
+          name: "${prefix}-${filename}",
         }) as DefineComponent
       </script>
     `,
     'vue'
   )
   writeFile(
-    path.resolve(pathComponents, `${prefix}-${iconName}.vue`),
+    path.resolve(pathComponents, `${prefix}-${filename}.vue`),
     vue,
     'utf-8'
   )
 }
 
-const generateEntry = async (icons: {
-  [iconName: string]: string
-}) => {
-  const temp = []
-  for (const iconName in icons) {
-    const camelcaseIconName = camelcase(iconName, {
-      pascalCase: true
-    })
-    temp.push(
-      `export { default as ${
-        prefix + camelcaseIconName
-      } } from './${prefix}-${iconName}.vue'`
-    )
-  }
-  const code = formatCode(temp.join('\n'))
-
+const generateEntry = async (filePathList: string[]) => {
+  const code = formatCode(
+    filePathList
+      .map((file) => {
+        const filename = getName(file)
+        const camelcaseIconName = camelcase(filename, {
+          pascalCase: true
+        })
+        return `
+          export { default as 
+          ${prefix + camelcaseIconName} 
+          } from './${prefix}-${filename}.vue'
+        `
+      })
+      .join('\n')
+  )
   await writeFile(
     path.resolve(pathComponents, 'index.ts'),
     code,
@@ -76,13 +79,14 @@ const generateEntry = async (icons: {
   )
 }
 
-consola.info(chalk.blue('清空src/components'))
+console.log('1、清空src/components')
 await emptyDir(pathComponents)
 
-consola.info(chalk.blue('生成icon-vue-components'))
-for (const iconName in icons) {
-  transformToVueComponent(iconName, icons[iconName])
-}
+console.log('2、生成icon-vue-components')
+const filePathList = await getSvgFiles()
+await Promise.all([
+  filePathList.map((filePath) => transformToVueComponent(filePath))
+])
 
-consola.info(chalk.blue('生成入口文件'))
-await generateEntry(icons)
+console.log('3、生成入口文件')
+await generateEntry(filePathList)

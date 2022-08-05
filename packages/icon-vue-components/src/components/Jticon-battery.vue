@@ -1,0 +1,48 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="22"
+    height="22"
+    viewBox="0 0 22 22"
+    fill="none"
+  >
+    <g opacity="1" transform="translate(0 0)  rotate(0 11 11)">
+      <path
+        id="矩形"
+        fill-rule="evenodd"
+        style="fill: #000000"
+        transform="translate(0 0)  rotate(0 11 11)"
+        opacity="0"
+        d="M0,22L22,22L22,0L0,0L0,22Z "
+      />
+      <g opacity="1" transform="translate(1 6)  rotate(0 10.5 5)">
+        <path
+          id="矩形"
+          style="
+            stroke: #ffffff;
+            stroke-width: 1;
+            stroke-opacity: 1;
+            stroke-dasharray: 0 0;
+          "
+          transform="translate(0 0)  rotate(0 9 5)"
+          d="M2,10L16,10C17.1,10 18,9.1 18,8L18,2C18,0.9 17.1,0 16,0L2,0C0.9,0 0,0.9 0,2L0,8C0,9.1 0.9,10 2,10Z "
+        />
+        <path
+          id="矩形"
+          fill-rule="evenodd"
+          style="fill: #ffffff"
+          transform="translate(20 2)  rotate(0 0.5 3)"
+          opacity="1"
+          d="M0,6L0,6C0.27,6 0.52,5.89 0.71,5.71C0.89,5.52 1,5.27 1,5L1,1C1,0.73 0.89,0.48 0.71,0.29C0.52,0.11 0.27,0 0,0L0,6Z "
+        />
+      </g>
+    </g>
+  </svg>
+</template>
+<script lang="ts">
+import type { DefineComponent } from 'vue'
+export default {
+  name: 'Jticon-battery',
+} as DefineComponent
+</script>

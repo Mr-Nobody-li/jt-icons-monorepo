@@ -9,6 +9,7 @@ on:
   push:
     branches:
       - master
+      - test
 
 jobs:
   publish-npm:
@@ -20,7 +21,7 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: ls
-      - run: cd .\packages\
+      - run: cd ./packages
       - run: ls
       - run: npm run publish
       - run: ls

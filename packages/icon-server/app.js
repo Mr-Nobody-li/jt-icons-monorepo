@@ -10,10 +10,11 @@ import KoaBody from 'koa-body'
 import KoaStatic from 'koa-static'
 import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import router from './router/upload.js'
+import uploadRouter from './router/upload.js'
+import urlListRouter from './router/url-list.js'
+import { port } from './constant.js'
 
 const app = new Koa()
-const port = 3000
 const dir = dirname(fileURLToPath(import.meta.url))
 
 const koaBodyOptions = {
@@ -26,8 +27,9 @@ const koaBodyOptions = {
 app
   .use(KoaBody(koaBodyOptions))
   .use(KoaStatic(dir))
-  .use(router.routes())
-  .use(router.allowedMethods())
+  .use(uploadRouter.routes())
+  .use(urlListRouter.routes())
+  .use(uploadRouter.allowedMethods())
   .listen(port)
 
 console.log(`服务启动，端口${port}`)

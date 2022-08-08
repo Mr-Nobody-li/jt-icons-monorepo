@@ -26,18 +26,32 @@
     </el-upload>
     <hr />
     <h3>svg图标预览</h3>
+    <div
+      v-for="item in urlList"
+      :key="item"
+      class="svg-preview"
+    >
+      <img
+        class="svg"
+        :src="'api/' + item.url"
+      />
+      <span>{{ item.iconName }}</span>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import type { UploadUserFile } from 'element-plus'
 import { ElMessage } from 'element-plus'
+import Axios from 'axios'
 
 const fileList = ref<UploadUserFile[]>([])
+const urlList = ref([])
 
 const handleSuccess = () => {
   ElMessage.success('上传成功')
+  getUrlList()
 }
 
 // 文件名校验 禁止输入除小写字母、'-'以外的字符
@@ -47,10 +61,29 @@ const beforeUpload = (rawFile) => {
   fileNameIllegal && ElMessage.info('文件名只允许包含小写字母和"-"')
   return !fileNameIllegal
 }
+
+const getUrlList = () => {
+  const axios = Axios.create()
+  axios('api/urlList').then(({ data }) => {
+    urlList.value = data.urlList
+  })
+}
+
+onMounted(getUrlList)
 </script>
 
 <style lang="css" scoped>
 .upload-svg-file {
-  margin: 30px 300px;
+  margin: 30px 170px;
+}
+.svg-preview {
+  display: inline-block;
+  margin: 10px;
+}
+.svg {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 5px auto;
 }
 </style>

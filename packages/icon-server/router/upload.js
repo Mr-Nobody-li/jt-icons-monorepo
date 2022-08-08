@@ -9,10 +9,8 @@ import KoaRouter from 'koa-router'
 import fs from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-// import publish from '../script/publish'
-// publish()
-const port = 3000
-const pathSvg = 'static/svg'
+import { port, pathSvg } from '../constant.js'
+
 const dir = dirname(fileURLToPath(import.meta.url))
 const pathRoot = resolve(dir, '..')
 const pathStaticSvg = resolve(pathRoot, pathSvg)

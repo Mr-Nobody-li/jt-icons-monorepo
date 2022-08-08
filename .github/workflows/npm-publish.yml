@@ -20,10 +20,11 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: ls
-      - run: cd ./packages/icon-vue-components
+      - run: cd .\packages\
       - run: ls
-      - run: cat package.json
-      - run: npm run build
-      - run: npm publish --access public
+      - run: npm run publish
+      - run: ls
+        # - run: npm run build
+        # - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}

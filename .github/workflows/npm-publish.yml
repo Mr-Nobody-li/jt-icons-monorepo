@@ -24,9 +24,9 @@ jobs:
           npm i pnpm -g
           pnpm i
           cd packages/icon-vue-components
-          ls
           pnpm i
           pnpm build
+          npm publish --access public
         # - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}

@@ -9,6 +9,7 @@ on:
   push:
     branches:
       - master
+      - dev/test
 
 jobs:
   publish-npm:

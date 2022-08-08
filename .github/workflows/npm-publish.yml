@@ -20,7 +20,7 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: ls
-      - run: cd packages/icon-vue-components
+      - run: cd ./packages/icon-vue-components
       - run: ls
       - run: cat package.json
       - run: npm run build

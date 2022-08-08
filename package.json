@@ -4,7 +4,7 @@
   "scripts": {
     "lint": "eslint --fix packages/**/src/**/*.{ts,js,vue}",
     "prepare": "husky install",
-    "publish": "cd packages/icon-vue-components && npm i && npm run build && npm publish"
+    "publish": "cd packages/icon-vue-components && npm i && npm run build"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",

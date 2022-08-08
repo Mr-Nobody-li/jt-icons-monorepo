@@ -23,6 +23,7 @@ jobs:
       - run: ls
       - run: cd packages
       - run: ls
+      - run: npm i
       - run: npm run publish
       - run: ls
       - run: pwd

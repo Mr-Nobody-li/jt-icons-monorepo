@@ -20,11 +20,13 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+        shell: bash
       - run: ls
-      - run: cd ./packages
+      - run: cd packages
       - run: ls
       - run: npm run publish
       - run: ls
+      - run: pwd
         # - run: npm run build
         # - run: npm publish --access public
         env:

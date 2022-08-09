@@ -15,9 +15,9 @@ jobs:
   publish-npm:
     runs-on: ubuntu-latest
     steps:
+      # 拉代码 安装node
       - name: CheckOut
         uses: actions/checkout@v3
-        
       - name: Use Node
         uses: actions/setup-node@v3
         with:
@@ -39,7 +39,7 @@ jobs:
         run: |
           npm i pnpm -g
           pnpm install
-      
+
       # 打包
       - name: Build
         run: |
@@ -47,7 +47,6 @@ jobs:
           pnpm build
           npm publish --access public
 
-      # - run: npm publish --access public
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-
+        # - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}

@@ -9,7 +9,6 @@ on:
   push:
     branches:
       - master
-      - dev/test
 
 jobs:
   publish-npm:
@@ -62,7 +61,7 @@ jobs:
       #     prerelease: false
 
       # 打包 发布
-      - name: Build And Pubulish Npm
+      - name: Build And Publish Npm
         run: |
           cd packages/icon-vue-components
           pnpm build

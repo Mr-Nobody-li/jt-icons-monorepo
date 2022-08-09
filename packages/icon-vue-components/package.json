@@ -41,7 +41,7 @@
   },
   "sideEffects": false,
   "scripts": {
-    "build": "npm run build:generate && npm run build:build && npm run build:types",
+    "build": "pnpm build:generate && pnpm build:build && pnpm build:types",
     "build:generate": "tsx build/generate.ts",
     "build:build": "tsx build/build.ts",
     "build:types": "vue-tsc --declaration --emitDeclarationOnly",

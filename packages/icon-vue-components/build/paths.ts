@@ -14,5 +14,13 @@ const pathSrc = resolve(pathRoot, 'src')
 const pathComponents = resolve(pathSrc, 'components')
 const pathOutput = resolve(pathRoot, 'dist')
 const pathSvgFiles = resolve(pathRoot, '..', 'icon-server/static/svg')
+const pathPackageJson = resolve(pathRoot, 'package.json')
 
-export { pathRoot, pathSrc, pathComponents, pathOutput, pathSvgFiles }
+export {
+  pathRoot,
+  pathSrc,
+  pathComponents,
+  pathOutput,
+  pathSvgFiles,
+  pathPackageJson
+}

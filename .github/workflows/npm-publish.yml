@@ -24,7 +24,7 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
 
-      # 添加缓存，逻辑和CI Workflow里的一样
+        # 添加缓存，逻辑和CI Workflow里的一样
       - name: Cache
         id: cache-dependencies
         uses: actions/cache@v3
@@ -33,20 +33,40 @@ jobs:
             **/node_modules
           key: ${{hashFiles('**/pnpm-lock.yaml')}}
 
-      # 安装依赖。命中缓存则跳过此步
+        # 安装依赖。命中缓存则跳过此步
       - name: Installing Dependencies
         if: steps.cache-dependencies.outputs.cache-hit != 'true'
         run: |
           npm i pnpm -g
           pnpm install
 
-      # 打包
+        # 从package.json里获取version属性的值
+      - name: Read Version
+        # 读取出来的值会放在steps.[id].outputs.value供其他步骤step读取
+        id: version
+        uses: ashley-taylor/read-json-property-action@v1.0
+        with:
+          path: ./packages/icon-vue-components/package.json
+          property: version
+
+        # 基于当前commit进行版本发布(Create a release)，tag_name是v前缀加上package.json的version值
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROJECT_ACCESS_TOKEN }}
+        with:
+          tag_name: v${{steps.version.outputs.value}}
+          release_name: vv${{steps.version.outputs.value}}
+          draft: false
+          prerelease: false
+
+        # 打包
       - name: Build
         run: |
           cd packages/icon-vue-components
           pnpm build
           npm publish --access public
 
-        # - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}

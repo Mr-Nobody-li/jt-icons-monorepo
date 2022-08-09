@@ -40,33 +40,32 @@ jobs:
           npm i pnpm -g
           pnpm install
 
-        # 从package.json里获取version属性的值
-      - name: Read Version
-        # 读取出来的值会放在steps.[id].outputs.value供其他步骤step读取
-        id: version
-        uses: ashley-taylor/read-json-property-action@v1.0
-        with:
-          path: ./packages/icon-vue-components/package.json
-          property: version
+      #   # 从package.json里获取version属性的值
+      # - name: Read Version
+      #   # 读取出来的值会放在steps.[id].outputs.value供其他步骤step读取
+      #   id: version
+      #   uses: ashley-taylor/read-json-property-action@v1.0
+      #   with:
+      #     path: ./packages/icon-vue-components/package.json
+      #     property: version
 
-        # 基于当前commit进行版本发布(Create a release)，tag_name是v前缀加上package.json的version值
-      - name: Create GitHub Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{steps.version.outputs.value}}
-          release_name: vv${{steps.version.outputs.value}}
-          draft: false
-          prerelease: false
+      #   # 基于当前commit进行版本发布(Create a release)，tag_name是v前缀加上package.json的version值
+      # - name: Create GitHub Release
+      #   id: create_release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: v${{steps.version.outputs.value}}
+      #     release_name: v${{steps.version.outputs.value}}
+      #     draft: false
+      #     prerelease: false
 
-        # 打包
-      - name: Build
+      # 打包 发布
+      - name: Build And Pubulish Npm
         run: |
           cd packages/icon-vue-components
           pnpm build
-          npm publish --access public
-
+          pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}

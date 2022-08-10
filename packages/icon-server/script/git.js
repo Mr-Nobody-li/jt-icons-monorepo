@@ -10,7 +10,7 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const dir = dirname(fileURLToPath(import.meta.url))
-const pathGit = resolve(dir, '..')
+const pathGit = resolve(dir, '../../..')
 const git = simpleGit(pathGit)
 
 git

@@ -36,6 +36,7 @@ importers:
       koa-router: ^12.0.0
       koa-static: ^5.0.0
       semver: ^7.3.7
+      simple-git: ^3.12.0
     dependencies:
       koa: 2.13.4
       koa-body: 5.0.0
@@ -44,6 +45,7 @@ importers:
     devDependencies:
       fast-glob: 3.2.11
       semver: 7.3.7
+      simple-git: 3.12.0
 
   packages/icon-upload:
     specifiers:
@@ -410,6 +412,18 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
+    dev: true
+
+  /@kwsites/file-exists/1.1.1:
+    resolution: {integrity: sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==}
+    dependencies:
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@kwsites/promise-deferred/1.1.1:
+    resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
     dev: true
 
   /@nodelib/fs.scandir/2.1.5:
@@ -3165,6 +3179,16 @@ packages:
 
   /signal-exit/3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
+    dev: true
+
+  /simple-git/3.12.0:
+    resolution: {integrity: sha512-cy1RSRFHGZSrlYa3MnUuNVOXLUdifEZD2X8+AZjg8mKCdRvtCFSga6acq5N2g0ggb8lH3jBi369MrFZ+Y6sfsA==}
+    dependencies:
+      '@kwsites/file-exists': 1.1.1
+      '@kwsites/promise-deferred': 1.1.1
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /slash/3.0.0:

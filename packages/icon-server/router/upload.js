@@ -7,6 +7,7 @@
  */
 import KoaRouter from 'koa-router'
 import fs from 'node:fs'
+import { resolve } from 'node:path'
 import { port } from '../script/constant.js'
 import { updateVersion } from '../script/update-version.js'
 import { gitPush } from '../script/git.js'
@@ -30,14 +31,14 @@ const uploadFile = (file, ctx) => {
   )
   // 使用 createWriteStream 写入数据，然后使用管道流pipe拼接
   const writeStream = fs.createWriteStream(fileResource)
-  const handleReponse = () => {
+  const handleReponse = async () => {
     fileReader.pipe(writeStream)
     ctx.body = {
       url: `http:localhost:${port}/${pathSvg}/${file.originalFilename}`,
       code: 0,
       message: '上传成功'
     }
-    const version = updateVersion()
+    const version = await updateVersion()
     gitPush(version)
   }
 

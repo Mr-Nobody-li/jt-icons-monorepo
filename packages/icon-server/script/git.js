@@ -9,6 +9,7 @@ import { simpleGit } from 'simple-git'
 import { pathGit } from './paths.js'
 
 const gitPush = (version) => {
+  console.log(`git push 版本号${version}`)
   simpleGit(pathGit)
     .add('./*')
     .commit('test: 测试git')

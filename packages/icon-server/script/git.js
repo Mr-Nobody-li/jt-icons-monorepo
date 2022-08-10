@@ -13,8 +13,8 @@ const gitPush = (version) => {
   simpleGit(pathGit)
     .add('./*')
     .commit('test: 测试git')
-    .addTag(`v${version}`)
     .push('origin', 'master')
+    .addTag(`v${version}`)
 }
 
 export { gitPush }

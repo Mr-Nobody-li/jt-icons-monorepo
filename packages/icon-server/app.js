@@ -12,7 +12,7 @@ import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import uploadRouter from './router/upload.js'
 import urlListRouter from './router/url-list.js'
-import { port } from './constant.js'
+import { port } from './script/constant.js'
 
 const app = new Koa()
 const dir = dirname(fileURLToPath(import.meta.url))

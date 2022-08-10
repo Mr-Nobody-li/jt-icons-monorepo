@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-08
  * @Description: esbuild打包
  */
-import path from 'path'
+import path from 'node:path'
 import { build } from 'esbuild'
 import vue from 'unplugin-vue/esbuild'
 import { emptyDir } from 'fs-extra'

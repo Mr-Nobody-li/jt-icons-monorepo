@@ -5,8 +5,8 @@
  * @LastEditTime: 2022-08
  * @Description:获取关键文件夹的绝对路径
  */
-import { dirname, resolve } from 'path'
-import { fileURLToPath } from 'url'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 const dir = dirname(fileURLToPath(import.meta.url))
 const pathRoot = resolve(dir, '..')

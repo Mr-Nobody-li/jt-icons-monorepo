@@ -5,8 +5,8 @@
  * @LastEditTime: 2022-08
  * @Description: 生成icon-vue-components
  */
-import path from 'path'
-import { writeFile, readFile } from 'fs/promises'
+import path from 'node:path'
+import { writeFile, readFile } from 'node:fs/promises'
 import { emptyDir } from 'fs-extra'
 import camelcase from 'camelcase'
 import { format } from 'prettier'

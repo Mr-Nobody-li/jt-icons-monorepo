@@ -9,8 +9,8 @@ import KoaRouter from 'koa-router'
 import fs from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { port, pathSvg } from '../constant.js'
-import { updateVersion } from '../update-version.js'
+import { port, pathSvg } from '../script/constant.js'
+import { updateVersion } from '../script/update-version.js'
 
 const dir = dirname(fileURLToPath(import.meta.url))
 const pathRoot = resolve(dir, '..')

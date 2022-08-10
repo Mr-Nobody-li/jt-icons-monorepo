@@ -11,6 +11,8 @@ import { fileURLToPath } from 'node:url'
 
 const dir = dirname(fileURLToPath(import.meta.url))
 const pathGit = resolve(dir, '../../..')
-const git = simpleGit(pathGit)
-
-git.add('./*').commit('test: 测试git').push('origin', 'master')
+simpleGit(pathGit)
+  .add('./*')
+  .commit('test: 测试git')
+  .addTag('v1.1.1')
+  .push('origin', 'master')

@@ -6,11 +6,8 @@
  * @Description: 提交到远程仓库
  */
 import { simpleGit } from 'simple-git'
-import { dirname, resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { pathGit } from './paths.js'
 
-const dir = dirname(fileURLToPath(import.meta.url))
-const pathGit = resolve(dir, '../../..')
 const gitPush = (version) => {
   simpleGit(pathGit)
     .add('./*')
@@ -19,4 +16,4 @@ const gitPush = (version) => {
     .push('origin', 'master')
 }
 
-export default { gitPush }
+export { gitPush }

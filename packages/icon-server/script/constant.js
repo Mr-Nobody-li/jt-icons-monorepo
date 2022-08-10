@@ -6,5 +6,4 @@
  * @Description: 常量
  */
 export const port = 3000
-export const pathSvg = 'static/svg'
 export const prefix = 'Jticon'

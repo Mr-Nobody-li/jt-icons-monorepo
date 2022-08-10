@@ -7,15 +7,11 @@
  */
 import KoaRouter from 'koa-router'
 import fs from 'node:fs'
-import { dirname, resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
-import { port, pathSvg } from '../script/constant.js'
+import { port } from '../script/constant.js'
 import { updateVersion } from '../script/update-version.js'
 import { gitPush } from '../script/git.js'
+import { pathStaticSvg, pathSvg } from '../script/paths.js'
 
-const dir = dirname(fileURLToPath(import.meta.url))
-const pathRoot = resolve(dir, '..')
-const pathStaticSvg = resolve(pathRoot, pathSvg)
 const router = KoaRouter()
 
 router.post('/upload', async (ctx) => {

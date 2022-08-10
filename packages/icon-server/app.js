@@ -8,14 +8,12 @@
 import Koa from 'koa'
 import KoaBody from 'koa-body'
 import KoaStatic from 'koa-static'
-import { dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import uploadRouter from './router/upload.js'
 import urlListRouter from './router/url-list.js'
 import { port } from './script/constant.js'
+import { pathRoot } from './script/paths.js'
 
 const app = new Koa()
-const dir = dirname(fileURLToPath(import.meta.url))
 
 const koaBodyOptions = {
   multipart: true,
@@ -26,7 +24,7 @@ const koaBodyOptions = {
 
 app
   .use(KoaBody(koaBodyOptions))
-  .use(KoaStatic(dir))
+  .use(KoaStatic(pathRoot))
   .use(uploadRouter.routes())
   .use(urlListRouter.routes())
   .use(uploadRouter.allowedMethods())

@@ -8,7 +8,7 @@
 import semver from 'semver'
 import { readFile, writeFile } from 'node:fs/promises'
 import { format } from 'prettier'
-import { pathPackageJson } from '../../icon-vue-components/build/paths'
+import { pathPackageJson } from './paths.js'
 
 // 更新patch版本号
 const updateVersion = async () => {
@@ -22,6 +22,4 @@ const updateVersion = async () => {
   return contentObj.version
 }
 
-export default {
-  updateVersion
-}
+export { updateVersion }

@@ -7,7 +7,8 @@
  */
 import KoaRouter from 'koa-router'
 import fg from 'fast-glob'
-import { pathSvg, prefix } from '../script/constant.js'
+import { prefix } from '../script/constant.js'
+import { pathSvg } from '../script/paths.js'
 
 const router = KoaRouter()
 

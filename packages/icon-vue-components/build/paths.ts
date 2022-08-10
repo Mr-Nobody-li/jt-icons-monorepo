@@ -3,7 +3,7 @@
  * @Date: 2022-08
  * @LastEditors: Mr-Nobody-li
  * @LastEditTime: 2022-08
- * @Description:获取关键文件夹的绝对路径
+ * @Description: 获取关键文件夹的绝对路径
  */
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>1</title>
+    <defs>
+        <path d="M20.1161111,20.3574717 C20.2447778,20.5916442 20.3498333,20.805655 20.4405556,21.0041887 C20.5312222,21.1978598 20.6122222,21.3736226 20.6745,21.5314178 C20.7341667,21.7071806 20.7912222,21.8626631 20.8366111,22 L3.56033333,22 C3.60805556,21.8626631 3.663,21.7071806 3.72244444,21.5314178 C3.7845,21.3736226 3.86566667,21.1978598 3.95638889,21.0041887 C4.04711111,20.805655 4.16166667,20.5916442 4.30488889,20.3574717 L0,20.3574717 C0.601333333,18.8137951 1.39366667,17.3927493 2.3815,16.1038814 C2.79905556,15.5535256 3.28344444,15.0136065 3.84177778,14.4761779 C4.393,13.9362588 5.01344444,13.4446685 5.70072222,12.9939353 C6.38777778,12.5431429 7.14694444,12.1609596 7.97961111,11.8350512 C8.80988889,11.5140054 9.72633333,11.292345 10.7285,11.1753477 L10.7285,0.088 L13.6206667,0.088 L13.6206667,11.2033962 C14.5321111,11.3205714 15.3769444,11.5470943 16.1499444,11.8783396 C16.9301111,12.2118976 17.6462778,12.6041024 18.3022778,13.0548356 C18.9561667,13.5007655 19.5527222,13.9973962 20.0967778,14.5347655 C20.6360556,15.0721941 21.1132778,15.6146631 21.5286667,16.1622911 C22.5165,17.4332507 23.3324444,18.8341941 23.9791667,20.3572345 L20.1161111,20.3574717 Z" id="path-1"></path>
+        <filter x="-8.3%" y="-8.7%" width="116.6%" height="117.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.101262019 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.800000012">
+        <g id="窗帘-copy-8备份-12" transform="translate(-176.000000, -460.000000)">
+            <g id="1" transform="translate(0.000000, 452.000000)">
+                <g transform="translate(176.000000, 8.000000)" id="开关照明">
+                    <use fill="#8A9398" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

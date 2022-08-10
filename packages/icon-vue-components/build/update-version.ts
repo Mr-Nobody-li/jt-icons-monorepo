@@ -19,3 +19,5 @@ const newContent = format(JSON.stringify(contentObj), {
 })
 
 writeFile(pathPackageJson, newContent, 'utf-8')
+
+console.log('更新package.json版本号：' + contentObj.version)

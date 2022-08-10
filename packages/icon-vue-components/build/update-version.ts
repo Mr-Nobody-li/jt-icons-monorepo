@@ -6,7 +6,8 @@
  * @Description: 更新package.json version patch版本号
  */
 import semver from 'semver'
-import { readFile, writeFile } from 'fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
+import { execSync } from 'node:child_process'
 import { format } from 'prettier'
 import { pathPackageJson } from './paths'
 
@@ -18,6 +19,8 @@ const newContent = format(JSON.stringify(contentObj), {
   parser: 'json-stringify'
 })
 
-writeFile(pathPackageJson, newContent, 'utf-8')
+console.log('更新package.json版本号:' + contentObj.version)
+await writeFile(pathPackageJson, newContent, 'utf-8')
 
-console.log('更新package.json版本号：' + contentObj.version)
+console.log('发布npm')
+await execSync('npm publish --access public')

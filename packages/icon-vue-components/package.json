@@ -1,6 +1,6 @@
 {
   "name": "@jt-icons/icon-vue-components",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Vue components of JT Icons collection.",
   "type": "module",
   "keywords": [
@@ -45,8 +45,7 @@
     "build:generate": "tsx build/generate.ts",
     "build:build": "tsx build/build.ts",
     "build:types": "vue-tsc --declaration --emitDeclarationOnly",
-    "publish": "pnpm publish:update-version && npm publish --access public",
-    "publish:update-version": "tsx build/update-version.ts"
+    "publish": "tsx build/update-version.ts"
   },
   "peerDependencies": {
     "vue": "^3.2.0"

@@ -7,7 +7,7 @@
  */
 import semver from 'semver'
 import { readFile, writeFile } from 'node:fs/promises'
-import { execSync } from 'node:child_process'
+// import { execSync } from 'node:child_process'
 import { format } from 'prettier'
 import { pathPackageJson } from './paths'
 
@@ -23,4 +23,5 @@ console.log('更新package.json版本号:' + contentObj.version)
 await writeFile(pathPackageJson, newContent, 'utf-8')
 
 console.log('发布npm')
-await execSync('npm publish --access public')
+// await execSync('npm publish --access public')
+process.exit(0)

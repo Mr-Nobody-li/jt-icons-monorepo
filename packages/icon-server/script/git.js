@@ -13,11 +13,4 @@ const dir = dirname(fileURLToPath(import.meta.url))
 const pathGit = resolve(dir, '../../..')
 const git = simpleGit(pathGit)
 
-git
-  .add('./*')
-  .commit('test: 测试git')
-  .addRemote(
-    'origin',
-    'git@github.com:Mr-Nobody-li/jt-icons-monorepo.git'
-  )
-  .push('origin', 'master')
+git.add('./*').commit('test: 测试git').push('origin', 'master')

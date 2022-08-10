@@ -19,6 +19,7 @@ const updateVersion = async () => {
     parser: 'json-stringify'
   })
   await writeFile(pathPackageJson, newContent, 'utf-8')
+  return contentObj.version
 }
 
 export default {

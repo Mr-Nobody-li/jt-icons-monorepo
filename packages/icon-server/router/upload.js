@@ -11,6 +11,7 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { port, pathSvg } from '../script/constant.js'
 import { updateVersion } from '../script/update-version.js'
+import { gitPush } from '../script/git.js'
 
 const dir = dirname(fileURLToPath(import.meta.url))
 const pathRoot = resolve(dir, '..')
@@ -40,7 +41,8 @@ const uploadFile = (file, ctx) => {
       code: 0,
       message: '上传成功'
     }
-    updateVersion()
+    const version = updateVersion()
+    gitPush(version)
   }
 
   // 判断 /static/svg 文件夹是否存在，如果不在的话就创建一个

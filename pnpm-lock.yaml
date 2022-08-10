@@ -35,6 +35,7 @@ importers:
       koa-body: ^5.0.0
       koa-router: ^12.0.0
       koa-static: ^5.0.0
+      semver: ^7.3.7
     dependencies:
       koa: 2.13.4
       koa-body: 5.0.0
@@ -42,6 +43,7 @@ importers:
       koa-static: 5.0.0
     devDependencies:
       fast-glob: 3.2.11
+      semver: 7.3.7
 
   packages/icon-upload:
     specifiers:

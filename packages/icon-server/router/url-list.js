@@ -3,7 +3,7 @@
  * @Date: 2022-08
  * @LastEditors: Mr-Nobody-li
  * @LastEditTime: 2022-08
- * @Description: urlList接口
+ * @Description: urlList获取svg图片路径接口
  */
 import KoaRouter from 'koa-router'
 import fg from 'fast-glob'

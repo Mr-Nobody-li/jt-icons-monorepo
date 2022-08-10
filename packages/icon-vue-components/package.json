@@ -44,8 +44,7 @@
     "build": "pnpm build:generate && pnpm build:build && pnpm build:types",
     "build:generate": "tsx build/generate.ts",
     "build:build": "tsx build/build.ts",
-    "build:types": "vue-tsc --declaration --emitDeclarationOnly",
-    "publish": "tsx build/update-version.ts"
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly"
   },
   "peerDependencies": {
     "vue": "^3.2.0"

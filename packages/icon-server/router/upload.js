@@ -3,13 +3,14 @@
  * @Date: 2022-08
  * @LastEditors: Mr-Nobody-li
  * @LastEditTime: 2022-08
- * @Description: upload接口
+ * @Description: upload上传文件接口
  */
 import KoaRouter from 'koa-router'
 import fs from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { port, pathSvg } from '../constant.js'
+import { updateVersion } from '../update-version.js'
 
 const dir = dirname(fileURLToPath(import.meta.url))
 const pathRoot = resolve(dir, '..')
@@ -39,6 +40,7 @@ const uploadFile = (file, ctx) => {
       code: 0,
       message: '上传成功'
     }
+    updateVersion()
   }
 
   // 判断 /static/svg 文件夹是否存在，如果不在的话就创建一个

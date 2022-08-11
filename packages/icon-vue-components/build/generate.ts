@@ -12,6 +12,7 @@ import camelcase from 'camelcase'
 import { format } from 'prettier'
 import type { BuiltInParserName } from 'prettier'
 import glob from 'fast-glob'
+import { optimize } from 'svgo'
 import { pathComponents, pathSvgFiles } from './paths'
 
 const prefix = 'Jticon'
@@ -33,7 +34,7 @@ const getName = (filePath: string) =>
   path.basename(filePath).replace('.svg', '')
 
 const transformToVueComponent = async (filePath: string) => {
-  const content = await readFile(filePath, 'utf-8')
+  const content = handleSvgFormat(await readFile(filePath, 'utf-8'))
   const filename = getName(filePath)
   const vue = formatCode(
     `
@@ -54,6 +55,14 @@ const transformToVueComponent = async (filePath: string) => {
     vue,
     'utf-8'
   )
+}
+
+const handleSvgFormat = (svgContent) => {
+  const { data } = optimize(svgContent, {
+    removeStyleElement: true,
+    removeScriptElement: true
+  })
+  return data
 }
 
 const generateEntry = async (filePathList: string[]) => {

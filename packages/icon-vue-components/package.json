@@ -65,5 +65,8 @@
     "unplugin-vue": "^2.2.1",
     "vue": "^3.2.37",
     "vue-tsc": "^0.38.2"
+  },
+  "dependencies": {
+    "svgo": "^2.8.0"
   }
 }

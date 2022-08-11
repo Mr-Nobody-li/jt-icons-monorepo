@@ -10,7 +10,7 @@ import { gitPush } from '../script/git.js'
 
 const router = KoaRouter()
 router.get('/publish', async (ctx) => {
-  const message = await gitPush(version)
+  const message = await gitPush()
   ctx.body = {
     code: 0,
     message

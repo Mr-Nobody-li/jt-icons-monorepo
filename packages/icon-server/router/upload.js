@@ -9,8 +9,6 @@ import KoaRouter from 'koa-router'
 import fs from 'node:fs'
 import { resolve } from 'node:path'
 import { port } from '../script/constant.js'
-import { updateVersion } from '../script/update-version.js'
-import { gitPush } from '../script/git.js'
 import { pathStaticSvg, pathSvg } from '../script/paths.js'
 
 const router = KoaRouter()
@@ -38,8 +36,6 @@ const uploadFile = (file, ctx) => {
       code: 0,
       message: '上传成功'
     }
-    const version = await updateVersion()
-    gitPush(version)
   }
 
   // 判断 /static/svg 文件夹是否存在，如果不在的话就创建一个

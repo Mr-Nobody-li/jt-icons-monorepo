@@ -10,8 +10,11 @@ import KoaBody from 'koa-body'
 import KoaStatic from 'koa-static'
 import uploadRouter from './router/upload.js'
 import urlListRouter from './router/url-list.js'
+import publishRouter from './router/publish.js'
 import { port } from './script/constant.js'
 import { pathRoot } from './script/paths.js'
+
+const routers = [uploadRouter, urlListRouter, publishRouter]
 
 const app = new Koa()
 
@@ -22,12 +25,10 @@ const koaBodyOptions = {
   }
 }
 
-app
-  .use(KoaBody(koaBodyOptions))
-  .use(KoaStatic(pathRoot))
-  .use(uploadRouter.routes())
-  .use(urlListRouter.routes())
-  .use(uploadRouter.allowedMethods())
-  .listen(port)
+app.use(KoaBody(koaBodyOptions)).use(KoaStatic(pathRoot)).listen(port)
+
+routers.forEach((router) => {
+  app.use(router.routes())
+})
 
 console.log(`服务启动，端口${port}`)

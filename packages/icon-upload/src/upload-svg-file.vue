@@ -26,6 +26,13 @@
     </el-upload>
     <hr />
     <h3>svg图标预览</h3>
+    <el-button
+      type="warning"
+      plain
+      @click="pubilshDebounce"
+    >
+      发布npm包
+    </el-button>
     <div
       v-for="item in urlList"
       :key="item"
@@ -46,6 +53,7 @@ import type { UploadUserFile } from 'element-plus'
 import { ElMessage } from 'element-plus'
 import Axios from 'axios'
 
+const axios = Axios.create()
 const fileList = ref<UploadUserFile[]>([])
 const urlList = ref([])
 
@@ -63,11 +71,28 @@ const beforeUpload = (rawFile) => {
 }
 
 const getUrlList = () => {
-  const axios = Axios.create()
   axios('api/urlList').then(({ data }) => {
     urlList.value = data.urlList
   })
 }
+
+const debounce = (fn, delay) => {
+  let timer = null
+  return function _debounce(...arg) {
+    if (timer) clearTimeout(timer)
+    timer = setTimeout(() => {
+      fn.apply(this, arg)
+    }, delay)
+  }
+}
+
+const publish = () => {
+  axios('api/publish').then(() => {
+    ElMessage.success('发布中')
+  })
+}
+
+const pubilshDebounce = debounce(publish, 2000)
 
 onMounted(getUrlList)
 </script>

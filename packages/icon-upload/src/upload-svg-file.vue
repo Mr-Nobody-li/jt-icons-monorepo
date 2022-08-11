@@ -26,13 +26,6 @@
     </el-upload>
     <hr />
     <h3>svg图标预览</h3>
-    <el-button
-      type="warning"
-      plain
-      @click="pubilshDebounce"
-    >
-      发布npm包
-    </el-button>
     <div
       v-for="item in urlList"
       :key="item"
@@ -45,6 +38,15 @@
       <span>{{ item.iconName }}</span>
     </div>
   </div>
+  <el-button
+    class="publish-button"
+    type="info"
+    plain
+    circle
+    @click="pubilshDebounce"
+  >
+    npm
+  </el-button>
 </template>
 
 <script lang="ts" setup>
@@ -110,5 +112,14 @@ onMounted(getUrlList)
   height: 40px;
   display: block;
   margin: 5px auto;
+}
+.publish-button {
+  position: fixed;
+  width: 60px;
+  font-size: 17px;
+  height: 60px;
+  bottom: 50px;
+  right: 50px;
+  font-weight: 600;
 }
 </style>

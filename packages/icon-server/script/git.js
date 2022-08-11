@@ -15,6 +15,7 @@ const gitPush = (version) => {
     .commit('test: 测试git')
     .push('origin', 'master')
     .addTag(`v${version}`)
+    .push('origin', 'master')
 }
 
 export { gitPush }

@@ -89,8 +89,8 @@ const debounce = (fn, delay) => {
 }
 
 const publish = () => {
-  axios('api/publish').then(() => {
-    ElMessage.success('发布中')
+  axios('api/publish').then(({ data }) => {
+    ElMessage.warning(data.message)
   })
 }
 

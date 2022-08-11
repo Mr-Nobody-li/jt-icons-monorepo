@@ -7,12 +7,14 @@
  */
 import { simpleGit } from 'simple-git'
 import { pathGit } from './paths.js'
+import { updateVersion } from './update-version.js'
 
-const gitPush = async (version) => {
-  console.log(`git push 版本号${version}`)
-  const git = await simpleGit(pathGit)
-  const gitStatus = git.status()
+const gitPush = async () => {
+  const git = simpleGit(pathGit)
+  const gitStatus = await git.status()
   if (gitStatus.files.length) {
+    const version = await updateVersion()
+    console.log(`git push 版本号${version}`)
     git
       .add('./*')
       .commit(`feat: 更新图标,版本号v${version}`)

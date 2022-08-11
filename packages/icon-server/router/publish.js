@@ -6,12 +6,10 @@
  * @Description: 发布npm包接口
  */
 import KoaRouter from 'koa-router'
-import { updateVersion } from '../script/update-version.js'
 import { gitPush } from '../script/git.js'
 
 const router = KoaRouter()
 router.get('/publish', async (ctx) => {
-  const version = await updateVersion()
   const message = await gitPush(version)
   ctx.body = {
     code: 0,

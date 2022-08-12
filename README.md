@@ -16,7 +16,7 @@ npm i @jt-icons/icon-vue-components
 
 ## 使用
 
-`JticonPassword`是开发者自己上传的svg文件，`password.svg`，我们将其导出的vue组件命名为前缀+文件名的格式
+`JticonPassword`是使用者（一般是产品或者UI）自己上传的svg文件，`password.svg`，我们将其导出的vue组件命名为前缀+文件名的格式
 
 ```
 <template>
@@ -38,4 +38,10 @@ pnpm i
 pnpm dev
 ```
 
-点击右下角npm按钮，则会触发GitHub action并发布npm依赖，虽然npm市场上显示已经更新，但是不能马上使用，npm会有延迟，大概一个小时左右才能使用
+打开`http://127.0.0.1:3001/`会看到如下界面
+
+> ![Snipaste_2022-08-12_16-16-11.png](https://s2.loli.net/2022/08/12/gBzeulPRykW14oQ.png)
+
+当使用者上传了图标后，点击右下角npm按钮，会触发GitHub action并发布npm依赖，所以尽量全部上传完毕之后再去点击这个按钮
+
+另外，虽然npm市场上显示版本已经更新，但是不能马上使用，测试发现npm会有一定的延迟，发布成功后大概一个小时左右才能使用

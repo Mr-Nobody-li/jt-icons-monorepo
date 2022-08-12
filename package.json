@@ -2,9 +2,11 @@
   "name": "jt-icons",
   "private": true,
   "scripts": {
+    "dev": " run-p dev:server dev:upload",
+    "dev:server": "cd packages/icon-server && pnpm dev",
+    "dev:upload": "cd packages/icon-upload && pnpm dev",
     "lint": "eslint --fix packages/**/src/**/*.{ts,js,vue}",
-    "prepare": "husky install",
-    "publish": "cd packages/icon-vue-components && npm i && npm run build"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
@@ -17,7 +19,8 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.0",
     "prettier": "latest",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "npm-run-all": "^4.1.5"
   },
   "lint-staged": {
     "packages/**/*.{ts,js}": [

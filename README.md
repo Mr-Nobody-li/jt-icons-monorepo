@@ -16,7 +16,7 @@ npm i @jt-icons/icon-vue-components
 
 ## 使用
 
-`JticonPassword`是使用者（一般是产品或者UI）自己上传的svg文件，`password.svg`，我们将其导出的vue组件命名为前缀+文件名的格式
+`JticonPassword`是使用者（一般是产品或者UI）上传的svg文件，`password.svg`，我们将其对应的vue组件的名称命名为前缀+文件名的格式，例如这里的前缀为Jticon
 
 ```
 <template>

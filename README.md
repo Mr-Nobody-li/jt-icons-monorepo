@@ -8,7 +8,7 @@
 
 注意：`icon-vue-components`本身不提供任何图标
 
-### 安装
+## 安装
 
 ```
 npm i @jt-icons/icon-vue-components

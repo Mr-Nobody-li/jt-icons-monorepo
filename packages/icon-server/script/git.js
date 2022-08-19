@@ -15,12 +15,16 @@ const gitPush = async () => {
   if (gitStatus.files.length) {
     const version = await updateVersion()
     console.log(`git push 版本号${version}`)
-    git
-      .add('./*')
-      .commit(`feat: 更新图标,版本号v${version}`)
-      .push('origin', 'master')
-      .addTag(`v${version}`)
-      .pushTags('origin')
+    try {
+      await git
+        .add('./*')
+        .commit(`feat: 更新图标,版本号v${version}`)
+        .push('origin', 'master')
+        .addTag(`v${version}`)
+        .pushTags('origin')
+    } catch (error) {
+      return 'workflow执行失败'
+    }
     return `workflow执行中,版本号v${version}`
   } else {
     return '没有新的图标'

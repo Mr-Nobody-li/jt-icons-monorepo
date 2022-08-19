@@ -22,10 +22,10 @@ const gitPush = async () => {
         .push('origin', 'master')
         .addTag(`v${version}`)
         .pushTags('origin')
+      return `workflow执行中,版本号v${version}`
     } catch (error) {
       return 'workflow执行失败'
     }
-    return `workflow执行中,版本号v${version}`
   } else {
     return '没有新的图标'
   }

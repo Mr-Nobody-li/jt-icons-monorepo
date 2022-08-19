@@ -14,13 +14,16 @@ const router = KoaRouter()
 
 router.get('/urlList', async (ctx) => {
   // 获取服务端svg静态文件路径
-  const svgList = fg.sync('*.svg', { cwd: 'static/svg' })
+  const svgList = fg.sync('*.svg', { cwd: 'static/svg', stats: true })
+  // 按照创建时间排序
+  svgList.sort((pre, cur) => cur.stats.ctimeMs - pre.stats.ctimeMs)
   const urlList = svgList.map((svg) => {
     return {
-      iconName: prefix + '-' + svg.replace('.svg', ''),
-      url: pathSvg + '/' + svg
+      iconName: prefix + '-' + svg.name.replace('.svg', ''),
+      url: pathSvg + '/' + svg.name
     }
   })
+
   ctx.body = {
     urlList,
     code: 0,

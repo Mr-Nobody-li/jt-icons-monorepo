@@ -35,7 +35,9 @@
         class="svg"
         :src="'api/' + item.url"
       />
-      <span>{{ item.iconName }}</span>
+      <span class="svg-name">
+        {{ item.iconName }}
+      </span>
     </div>
   </div>
   <el-button
@@ -106,6 +108,8 @@ onMounted(getUrlList)
 .svg-preview {
   display: inline-block;
   margin: 10px;
+  width: 130px;
+  text-align: center;
 }
 .svg {
   width: 40px;
@@ -121,5 +125,8 @@ onMounted(getUrlList)
   bottom: 50px;
   right: 50px;
   font-weight: 600;
+}
+.svg-name {
+  color: #409eff;
 }
 </style>

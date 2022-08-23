@@ -101,7 +101,7 @@ const publish = () => {
   })
 }
 
-const pubilshDebounce = debounce(publish, 2000)
+const pubilshDebounce = debounce(publish, 500)
 
 onMounted(getUrlList)
 </script>

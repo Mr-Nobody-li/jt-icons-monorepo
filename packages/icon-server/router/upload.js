@@ -13,7 +13,7 @@ import { pathStaticSvg, pathSvg } from '../script/paths.js'
 
 const router = KoaRouter()
 
-router.post('/upload', async (ctx) => {
+router.post('/upload', (ctx) => {
   // 获取上传文件
   const file = ctx.request.files.file
   uploadFile(file, ctx)
@@ -29,7 +29,7 @@ const uploadFile = (file, ctx) => {
   )
   // 使用 createWriteStream 写入数据，然后使用管道流pipe拼接
   const writeStream = fs.createWriteStream(fileResource)
-  const handleReponse = async () => {
+  const handleReponse = () => {
     fileReader.pipe(writeStream)
     ctx.body = {
       url: `http:localhost:${port}/${pathSvg}/${file.originalFilename}`,

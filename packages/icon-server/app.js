@@ -11,6 +11,7 @@ import KoaStatic from 'koa-static'
 import uploadRouter from './router/upload.js'
 import urlListRouter from './router/url-list.js'
 import publishRouter from './router/publish.js'
+import catchError from './script/catchError.js'
 import { port } from './script/constant.js'
 import { pathRoot } from './script/paths.js'
 
@@ -25,7 +26,11 @@ const koaBodyOptions = {
   }
 }
 
-app.use(KoaBody(koaBodyOptions)).use(KoaStatic(pathRoot)).listen(port)
+app
+  .use(catchError)
+  .use(KoaBody(koaBodyOptions))
+  .use(KoaStatic(pathRoot))
+  .listen(port)
 
 routers.forEach((router) => {
   app.use(router.routes())

@@ -29,7 +29,7 @@ const gitPush = async () => {
     } catch (error) {
       return {
         code: 10001,
-        message: `workflow执行失败`
+        message: `workflow执行失败: ${error}`
       }
     }
   } else {

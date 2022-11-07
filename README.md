@@ -1,5 +1,13 @@
 # icon-vue-components
 
+prod.juntong.ai
+root
+1R%-q^cJ
+port:
+6510 --- 22
+6511 --- 80
+6512 --- 8080
+
 ## 简介
 
 `icon-vue-components`是一个让开发者以组件的形式使用图标的图标组件库，类似于[element-plus-icon](https://github.com/element-plus/element-plus-icons) ，如果阅读了这两个项目的源码会发现在打包部分是参考了`element-plus-icon`。目前仅支持 vue 项目使用
@@ -34,7 +42,7 @@ import { JticonPassword } from '@jt-icons/icon-vue-components'
 
 ```
 // 推荐使用pnpm
-npm i -g pnpm
+npm i -g pnpm nodemon
 pnpm i
 pnpm dev
 ```

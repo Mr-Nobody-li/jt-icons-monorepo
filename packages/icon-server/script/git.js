@@ -7,7 +7,7 @@
  */
 import { simpleGit } from 'simple-git'
 import { pathGit } from './paths.js'
-import { updateVersion } from './update-version.js'
+import { updateVersion,resetVersion } from './update-version.js'
 
 const gitPush = async () => {
   const git = simpleGit(pathGit)
@@ -27,6 +27,7 @@ const gitPush = async () => {
         message: `workflow执行中,版本号v${version}`
       }
     } catch (error) {
+      resetVersion()
       return {
         code: 10001,
         message: `workflow执行失败: ${error}`

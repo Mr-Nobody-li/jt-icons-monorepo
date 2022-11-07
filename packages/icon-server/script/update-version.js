@@ -10,10 +10,13 @@ import { readFile, writeFile } from 'node:fs/promises'
 import { format } from 'prettier'
 import { pathPackageJson } from './paths.js'
 
+let oldVersion = null
+
 // 更新patch版本号
 const updateVersion = async () => {
   const content = await readFile(pathPackageJson, 'utf-8')
   const contentObj = JSON.parse(content)
+  oldVersion =  contentObj.version
   contentObj.version = semver.inc(contentObj.version, 'patch')
   const newContent = format(JSON.stringify(contentObj), {
     parser: 'json-stringify'
@@ -23,4 +26,15 @@ const updateVersion = async () => {
   return contentObj.version
 }
 
-export { updateVersion }
+// 恢复版本号
+const resetVersion = async () => {
+  const content = await readFile(pathPackageJson, 'utf-8')
+  const contentObj = JSON.parse(content)
+  contentObj.version = oldVersion
+  const newContent = format(JSON.stringify(contentObj), {
+    parser: 'json-stringify'
+  })
+  await writeFile(pathPackageJson, newContent, 'utf-8')
+}
+
+export { updateVersion,resetVersion }

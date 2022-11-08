@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>folder</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3.1数据管理/我的资源/详情（详细信息）" transform="translate(-20.000000, -253.000000)">
+            <g id="编组-11" transform="translate(0.000000, 240.000000)">
+                <g id="folder" transform="translate(20.000000, 13.000000)">
+                    <rect id="矩形备份-2" x="0" y="0" width="14" height="14"></rect>
+                    <g filter="url(#filter-1)" id="文件夹_seo-folder">
+                        <g transform="translate(1.000000, 1.000000)">
+                            <path d="M0,0.631578947 C0,0.282767368 0.282767368,0 0.631578947,0 L4.42105263,0 L6,1.89473684 L11.3684211,1.89473684 C11.7172421,1.89473684 12,2.17749474 12,2.52631579 L12,10.7368421 C12,11.0856632 11.7172421,11.3684211 11.3684211,11.3684211 L0.631578947,11.3684211 C0.282767368,11.3684211 0,11.0856632 0,10.7368421 L0,0.631578947 Z" id="路径" stroke="#333333" stroke-linejoin="round"></path>
+                            <polyline id="路径" stroke="#333333" stroke-linecap="round" stroke-linejoin="round" points="2.84210526 5.05263158 4.42105263 6.63157895 2.84210526 8.21052632"></polyline>
+                            <line x1="6.63157895" y1="8.21052632" x2="9.15789474" y2="8.21052632" id="路径" stroke="#333333" stroke-linecap="round"></line>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

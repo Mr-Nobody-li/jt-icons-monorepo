@@ -6,6 +6,7 @@
     "dev:server": "cd packages/icon-server && pnpm dev",
     "dev:upload": "cd packages/icon-upload && pnpm dev",
     "lint": "eslint --fix packages/**/src/**/*.{ts,js,vue}",
+    "pm2":"pm2 start --watch --name jt-icons npm -- run dev",
     "prepare": "husky install"
   },
   "devDependencies": {

@@ -116,6 +116,10 @@ onMounted(getUrlList)
   width: 130px;
   text-align: center;
 }
+.svg-preview:hover{
+  background-color: #f3f4f6;
+    border-radius: 5px;
+}
 .svg {
   width: 40px;
   height: 40px;

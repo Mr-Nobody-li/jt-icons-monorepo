@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>database-setting</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3.0数据管理/我的资源" transform="translate(-20.000000, -165.000000)">
+            <g id="编组-9备份-2" transform="translate(0.000000, 152.000000)">
+                <g id="database-setting" transform="translate(20.000000, 13.000000)">
+                    <rect id="矩形" x="0" y="0" width="14" height="14"></rect>
+                    <g filter="url(#filter-1)" id="数据库设置_database-setting-(1)" stroke-linecap="round" stroke-linejoin="round">
+                        <g transform="translate(1.000000, 2.000000)">
+                            <path d="M9,1.5 L9,3.9 L9,4.2 C8.11347,4.2 7.31676,4.58454 6.76755,5.19594 C6.29034,5.72718 6,6.42969 6,7.2 C6,7.37367 6.01476,7.54389 6.04308,7.70949 C6.19737,8.61138 6.75429,9.37587 7.52223,9.81138 C6.72348,10.05288 5.66328,10.2 4.5,10.2 C2.01471,10.2 0,9.52842 0,8.7 L0,6.3 L0,3.9 L0,1.5" id="路径" stroke="#333333"></path>
+                            <path d="M12,7.2 C12,8.85684 10.65684,10.2 9,10.2 C8.46273,10.2 7.95843,10.05876 7.52223,9.81138 C6.75429,9.37587 6.19737,8.61138 6.04308,7.70949 C6.01476,7.54389 6,7.37367 6,7.2 C6,6.42969 6.29034,5.72718 6.76755,5.19594 C7.31676,4.58454 8.11347,4.2 9,4.2 C10.65684,4.2 12,5.54316 12,7.2 Z" id="路径" stroke="#333333"></path>
+                            <path d="M9,1.5 C9,2.32842 6.98529,3 4.5,3 C2.01471,3 0,2.32842 0,1.5 C0,0.671574 2.01471,0 4.5,0 C6.98529,0 9,0.671574 9,1.5 Z" id="路径" stroke="#333333"></path>
+                            <path d="M0,6.3 C0,7.12842 2.01471,7.8 4.5,7.8 C5.0421,7.8 5.56179,7.76805 6.04308,7.70949" id="路径" stroke="#333333"></path>
+                            <path d="M0,3.9 C0,4.72842 2.01471,5.4 4.5,5.4 C5.32689,5.4 6.1017,5.32566 6.76755,5.19594" id="路径" stroke="#333333"></path>
+                            <polygon id="路径" stroke="#333333" stroke-width="0.8" points="9 6 10.03923 6.6 10.03923 7.8 9 8.4 7.96077 7.8 7.96077 6.6"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

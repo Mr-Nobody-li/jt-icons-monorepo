@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>lock</title>
+    <g id="------二期（0101）" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3.1数据管理/我的资源/详情（详细信息）说明" transform="translate(-36.000000, -76.000000)">
+            <g id="lock" transform="translate(36.000000, 76.000000)">
+                <rect id="矩形" x="0" y="0" width="24" height="24"></rect>
+                <g id="锁定_lock" transform="translate(6.000000, 5.000000)" stroke-linejoin="round" stroke-width="2">
+                    <rect id="矩形" stroke-opacity="0.85" stroke="#DE0000" fill-opacity="0.85" fill="#DE0000" fill-rule="nonzero" x="0" y="6.3" width="12.6" height="7.7" rx="1"></rect>
+                    <path d="M2.8,6.3 L2.8,3.5 C2.8,1.5670025 4.36702,0 6.3,0 C8.23298,0 9.8,1.5670025 9.8,3.5 L9.8,6.3" id="路径" stroke-opacity="0.85" stroke="#DE0000" stroke-linecap="round"></path>
+                    <line x1="6.3" y1="9.1" x2="6.3" y2="11.2" id="路径" stroke="#FFFFFF" stroke-linecap="round"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

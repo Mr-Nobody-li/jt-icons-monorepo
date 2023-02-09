@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 6</title>
+    <g id="------二期（0101）" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3.2数据管理/我的资源/联邦资源详情" transform="translate(-1167.000000, -187.000000)">
+            <g id="编组-3" transform="translate(1160.000000, 186.000000)">
+                <g id="编组-8" transform="translate(7.000000, 0.000000)">
+                    <g id="编组-6" transform="translate(0.000000, 1.000000)">
+                        <rect id="矩形" x="0" y="0" width="20" height="20"></rect>
+                        <g id="服务器_server" transform="translate(4.000000, 4.000000)" fill-rule="nonzero">
+                            <polygon id="路径" stroke="#67C23A" fill="#67C23A" stroke-linejoin="round" points="12 0 0 0 0 4.8 12 4.8"></polygon>
+                            <polygon id="路径" stroke="#67C23A" fill="#67C23A" stroke-linejoin="round" points="12 7.2 0 7.2 0 12 12 12"></polygon>
+                            <path d="M2.7,1.8 L2.1,1.8 C1.93431,1.8 1.8,1.93431 1.8,2.1 L1.8,2.7 C1.8,2.86569 1.93431,3 2.1,3 L2.7,3 C2.86569,3 3,2.86569 3,2.7 L3,2.1 C3,1.93431 2.86569,1.8 2.7,1.8 Z" id="路径" fill="#FFFFFF"></path>
+                            <path d="M2.7,9 L2.1,9 C1.93431,9 1.8,9.13431 1.8,9.3 L1.8,9.9 C1.8,10.06569 1.93431,10.2 2.1,10.2 L2.7,10.2 C2.86569,10.2 3,10.06569 3,9.9 L3,9.3 C3,9.13431 2.86569,9 2.7,9 Z" id="路径" fill="#FFFFFF"></path>
+                            <path d="M5.1,1.8 L4.5,1.8 C4.33431,1.8 4.2,1.93431 4.2,2.1 L4.2,2.7 C4.2,2.86569 4.33431,3 4.5,3 L5.1,3 C5.26569,3 5.4,2.86569 5.4,2.7 L5.4,2.1 C5.4,1.93431 5.26569,1.8 5.1,1.8 Z" id="路径" fill="#FFFFFF"></path>
+                            <path d="M5.1,9 L4.5,9 C4.33431,9 4.2,9.13431 4.2,9.3 L4.2,9.9 C4.2,10.06569 4.33431,10.2 4.5,10.2 L5.1,10.2 C5.26569,10.2 5.4,10.06569 5.4,9.9 L5.4,9.3 C5.4,9.13431 5.26569,9 5.1,9 Z" id="路径" fill="#FFFFFF"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

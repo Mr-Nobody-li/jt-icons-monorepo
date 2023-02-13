@@ -2,7 +2,7 @@
  * @Author: Mr-Nobody-li
  * @Date: 2022-08
  * @LastEditors: Mr-Nobody-li
- * @LastEditTime: 2022-08
+ * @LastEditTime: 2023-02
  * @Description: 上传svg文件
 -->
 <template>
@@ -15,6 +15,7 @@
       action="api/upload"
       multiple
       :on-success="handleSuccess"
+      :on-error="handleError"
       :before-upload="beforeUpload"
     >
       <el-button type="primary">本地上传</el-button>
@@ -64,6 +65,10 @@ const urlList = ref([])
 const handleSuccess = () => {
   ElMessage.success('上传成功')
   getUrlList()
+}
+
+const handleError = (error) => {
+  ElMessage.error(error.message)
 }
 
 // 文件名校验 禁止输入除小写字母、'-'以外的字符
@@ -116,9 +121,9 @@ onMounted(getUrlList)
   width: 130px;
   text-align: center;
 }
-.svg-preview:hover{
+.svg-preview:hover {
   background-color: #f3f4f6;
-    border-radius: 5px;
+  border-radius: 5px;
 }
 .svg {
   width: 40px;

@@ -2,7 +2,7 @@
  * @Author: Mr-Nobody-li
  * @Date: 2022-08
  * @LastEditors: Mr-Nobody-li
- * @LastEditTime: 2022-08
+ * @LastEditTime: 2023-02
  * @Description: 生成icon-vue-components
  */
 import path from 'node:path'
@@ -27,7 +27,7 @@ const formatCode = (
   format(code, {
     parser,
     semi: false,
-    singleQuote: true
+    singleQuote: true,
   })
 
 const getName = (filePath: string) =>
@@ -59,8 +59,10 @@ const transformToVueComponent = async (filePath: string) => {
 
 const handleSvgFormat = (svgContent) => {
   const { data } = optimize(svgContent, {
+    multipass: true,
+    removeDimensions: true,
     removeStyleElement: true,
-    removeScriptElement: true
+    removeScriptElement: true,
   })
   return data
 }
@@ -71,7 +73,7 @@ const generateEntry = async (filePathList: string[]) => {
       .map((file) => {
         const filename = getName(file)
         const camelcaseIconName = camelcase(filename, {
-          pascalCase: true
+          pascalCase: true,
         })
         return `
           export { default as 
@@ -94,7 +96,7 @@ await emptyDir(pathComponents)
 console.log('2、生成icon-vue-components')
 const filePathList = await getSvgFiles()
 await Promise.all([
-  filePathList.map((filePath) => transformToVueComponent(filePath))
+  filePathList.map((filePath) => transformToVueComponent(filePath)),
 ])
 
 console.log('3、生成入口文件')

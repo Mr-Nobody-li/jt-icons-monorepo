@@ -16,10 +16,10 @@ const router = KoaRouter()
 router.post('/upload', async (ctx) => {
   // 获取上传文件
   const file = ctx.request.files.file
-  await uploadFile(file)
+  await uploadFile(file, ctx)
 })
 
-const uploadFile = async (file) => {
+const uploadFile = async (file, ctx) => {
   // 组装成绝对路径
   const fileResource = resolve(
     pathStaticSvg,
@@ -32,11 +32,11 @@ const uploadFile = async (file) => {
     error.msg = `${file.originalFilename}已存在`
     throw error
   } else {
-    writeFile(fileResource)
+    writeFile({ file, fileResource, ctx })
   }
 }
 
-const writeFile = (file, fileResource) => {
+const writeFile = ({ file, fileResource, ctx }) => {
   // 读取文件流
   const fileReader = fs.createReadStream(file.filepath)
   // 使用 createWriteStream 写入数据，然后使用管道流pipe拼接

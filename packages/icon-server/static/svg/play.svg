@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>播放_play (1)</title>
+    <g id="------三期（0202）" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="5.1.2-数据任务拖拽界面" transform="translate(-860.000000, -104.000000)" fill-rule="nonzero">
+            <g id="编组-3" transform="translate(836.000000, 90.000000)">
+                <g id="播放_play-(1)" transform="translate(24.000000, 14.000000)">
+                    <path d="M16,32 C24.83656,32 32,24.83656 32,16 C32,7.16344 24.83656,0 16,0 C7.16344,0 0,7.16344 0,16 C0,24.83656 7.16344,32 16,32 Z" id="路径" fill="#3FBE00"></path>
+                    <polygon id="路径" stroke="#FFFFFF" stroke-width="2" fill="#FFFFFF" stroke-linejoin="round" points="12.8 16 12.8 10.45744 17.6 13.22872 22.4 16 17.6 18.77128 12.8 21.54256"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

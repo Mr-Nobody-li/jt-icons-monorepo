@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="15px" viewBox="0 0 14 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>database-setting</title>
+    <g id="v1.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.1.2-年度报告详情" transform="translate(-20.000000, -285.000000)">
+            <g id="编组-7备份" transform="translate(0.000000, 272.000000)">
+                <g id="编组-3" transform="translate(20.000000, 13.000000)">
+                    <rect id="矩形" x="0" y="0" width="14" height="14"></rect>
+                    <g id="编组" transform="translate(1.000000, 1.000000)" stroke="#FFFFFF" stroke-linejoin="round">
+                        <rect id="矩形" x="1.95" y="1.95" width="9.1" height="11.05"></rect>
+                        <path d="M9.1,1.95 L9.1,0 L0.325,0 C0.145509,0 0,0.145509 0,0.325 L0,11.05 L1.95,11.05" id="路径" stroke-linecap="round"></path>
+                        <line x1="4.55" y1="5.85" x2="8.45" y2="5.85" id="路径" stroke-linecap="round"></line>
+                        <line x1="4.55" y1="8.45" x2="8.45" y2="8.45" id="路径" stroke-linecap="round"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

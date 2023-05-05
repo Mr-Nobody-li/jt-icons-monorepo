@@ -34,7 +34,7 @@ jobs:
       - name: Installing Dependencies
         if: steps.cache-dependencies.outputs.cache-hit != 'true'
         run: |
-          npm i pnpm -g
+          npm i pnpm@^7.0.0 -g
           pnpm install
 
       #   # 从package.json里获取version属性的值
